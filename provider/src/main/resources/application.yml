@@ -1,0 +1,30 @@
+server:
+  port: 9999
+
+spring:
+  dubbo:
+    application:
+      name: provider
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    scan: com.aries
+    protocol:
+      name: dubbo
+      port: 9000
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dubbo_test
+    username: root
+    password: root
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+  global-config:
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+    refresh-mapper: true
+  mapper-locations: classpath:mappers/*.xml

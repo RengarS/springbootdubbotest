@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  dubbo:
+    application:
+      name: consumer
+    registry:
+      address: zookeeper://212.64.21.29:2181
+    scan: com.aries
